@@ -1,5 +1,5 @@
 """
-Supply Chain Services comp table.
+Consulting & Professional Services comp table.
 """
 
 import streamlit as st
@@ -14,12 +14,12 @@ from fetcher.db_manager import DBManager
 
 render_sidebar()
 
-st.title("Supply Chain Services")
+st.title("Consulting & Professional Services")
 
 db = DBManager(DB_PATH)
 try:
-    data = db.get_latest_snapshots(sector="supply_chain")
-    render_comp_table(data, "Supply Chain Services", show_sub_sectors=True)
+    data = db.get_latest_snapshots(sector="consulting")
+    render_comp_table(data, "Consulting & Professional Services", show_sub_sectors=True)
 except Exception as e:
     st.error(f"Error loading data: {e}")
     st.info("Run the data fetcher to populate the database.")
